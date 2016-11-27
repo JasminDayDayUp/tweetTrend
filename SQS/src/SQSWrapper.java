@@ -28,7 +28,7 @@ public class SQSWrapper {
 			Region usWest2 = Region.getRegion(Regions.US_WEST_2);
 			sqs.setRegion(usWest2);
 
-			 System.out.println("===========================================");
+		     System.out.println("===========================================");
 		     System.out.println("Getting Started with Amazon SQS");
 		     System.out.println("===========================================\n");
 			
