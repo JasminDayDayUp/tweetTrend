@@ -12,9 +12,10 @@ http://35.164.101.75:5000/
 
 # Techniques
 1. Fetch data from twitter streaming API by twitter4j.
-2. Use Amazon SQS as a queue service for asynchronous processing of the tweets.
-3. Use ALCHEMY API for sentiment analysis of the real time by returning sentiment evaluation for the text of the submitted Tweet. Sentiments are segregated into Positive, Negative and are displayed as Markers on the google Map.
-4. Use Amazon SNS to sends a notification that contains the tweet information to the User Interface, and to update the UI and display the processed sentiment about the tweet.
-5. Index the tweets with sentiment into AWS elasticsearch.
+2. Use Amazon SQS as a queue service for asynchronous processing of the tweets with keywords. 
+3. Use a workerthreadManager to spawns worker threads. Each worker thread reads a message from the queue.
+4. Use ALCHEMY API for sentiment analysis of the real time by returning sentiment evaluation for the text of the submitted Tweet. Sentiments are segregated into Positive, Negative and are displayed as Markers on the google Map.
+5. Use Amazon SNS to sends a notification that contains the tweet information to the User Interface, and to update the UI and display the processed sentiment about the tweet.
+6. Index the tweets with sentiment into AWS elasticsearch.
 
 
