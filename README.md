@@ -1,11 +1,21 @@
 # tweetTrend
-COMSE6998 CLOUD COMPUTING & BIG DATA - TwittMap(Assignment2)
+COMSE6998 CLOUD COMPUTING & BIG DATA - TweetTrend(Assignment2)
 A Java Web App that does geo-location clustering and sentiment analysis of real time tweets, using SQS, SNS, Alchemy. 
-# contributor
-Jingtao Zhu(jz2664),Jingmei Zhao(jz2685)
-# website for demo
+# Contributor
+Jingmei Zhao(jz2685),Jingtao Zhu(jz2664),
+# Website for demo
+http://35.164.101.75:5000/
+
 
 # Features
-1. Display twitts' location on map with predefined keywords search ('trump', 'food', 'NewYork', etc.)
+1. Deploy kafka and zookeeper in AWS EC2, consume the Twitter Streaming API and send all messages to a Kafka broker
+2. Display twitts' location on map with predefined keywords search ('trump', 'food', 'NewYork', 'fashion',etc.)
+
+# Techniques
+1. Fetch data from twitter streaming API by twitter4j.
+2. Use Amazon SQS as a queue service for asynchronous processing of the tweets.
+3. Use ALCHEMY API for sentiment analysis of the real time by returning sentiment evaluation for the text of the submitted Tweet. Sentiments are segregated into Positive, Negative and are displayed as Markers on the google Map.
+4. Use Amazon SNS to sends a notification that contains the tweet information to the User Interface, and to update the UI and display the processed sentiment about the tweet.
+5. Index the tweets with sentiment into elasticsearch.
 
 
