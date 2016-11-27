@@ -1,8 +1,4 @@
 
-
-//import org.json.JSONException;
-//import org.json.JSONObject;
-
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.sqs.AmazonSQSClient;
@@ -22,11 +18,8 @@ import com.amazonaws.services.sqs.model.SendMessageRequest;
 //import java.util.*;
 import com.google.gson.Gson;
 
-//import Tweet.message;
-
 public class FetchTweet {
 
-//    private EsHelper esHelper = new EsHelper();
 	private static double latitude;
 	private static double longtitude;
 	private static int count = 0;
@@ -37,8 +30,6 @@ public class FetchTweet {
 	private static String date;
 	private static GeoLocation loc;
 
-
-//    void fetchTwits() {
     	public static void main(String[] args) throws TwitterException {
     
         
@@ -66,9 +57,7 @@ public class FetchTweet {
 
                     
 					Tweet tw = new Tweet(name, date, message, longtitude, latitude);
-//					JSONObject obj = new JSONObject("loc");
-//					Gson gson = new Gson();
-//					String json = gson.toJson(obj);
+
 					try {
 						SQSWrapper.addMessage(message + "\n"			
 					  + name +"\n" + date +"\n"  + longtitude + ","+ latitude +"\n");
@@ -85,12 +74,12 @@ public class FetchTweet {
 
             @Override
             public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {
-                //System.out.println("Got a status deletion notice id:" + statusDeletionNotice.getStatusId());
+                System.out.println("Got a status deletion notice id:" + statusDeletionNotice.getStatusId());
             }
 
             @Override
             public void onTrackLimitationNotice(int numberOfLimitedStatuses) {
-//                System.out.println("Got track limitation notice:" + numberOfLimitedStatuses);
+               System.out.println("Got track limitation notice:" + numberOfLimitedStatuses);
             }
 
             @Override
